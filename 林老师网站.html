@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小林老师 - 设计艺术教学空间</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/lucide-react@latest/dist/umd/lucide-react.min.js" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=PingFang+SC:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    .nav-item.active {
+      color: #b42318 !important;
+    }
+    
+    .nav-item.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #b42318;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#b42318',
+            primaryDark: '#921a10',
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-b from-amber-50 via-white to-amber-50">
+  <!-- Header -->
+  <header class="border-b border-amber-100/50 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center">
+          <span class="text-white font-bold text-lg">林</span>
+        </div>
+        <div>
+          <div class="font-bold text-slate-900">小林老师</div>
+          <div class="text-xs text-red-600">设计艺术教学空间</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#home" class="nav-item text-sm font-medium text-slate-700 hover:text-red-600 relative transition">首页</a>
+        <a href="#courses" class="nav-item text-sm font-medium text-slate-700 hover:text-red-600 relative transition">课程</a>
+        <a href="#resources" class="nav-item text-sm font-medium text-slate-700 hover:text-red-600 relative transition">资源</a>
+        <a href="#about" class="nav-item text-sm font-medium text-slate-700 hover:text-red-600 relative transition">关于</a>
+      </nav>
+      <a href="#courses" class="bg-gradient-to-r from-red-600 to-red-700 text-white px-5 py-2 rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition">开始体验</a>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="mx-auto max-w-7xl px-6 py-16">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="flex gap-2 mb-8">
+          <span class="px-4 py-2 bg-red-50 text-red-700 rounded-full text-xs font-semibold">设计美学</span>
+          <span class="px-4 py-2 bg-amber-50 text-amber-700 rounded-full text-xs font-semibold">职业教学</span>
+          <span class="px-4 py-2 bg-purple-50 text-purple-700 rounded-full text-xs font-semibold">AI课程助手</span>
+        </div>
+        <h1 class="text-5xl lg:text-6xl font-black text-slate-900 mb-6">
+          小林老师<br><span class="text-red-600">课程助手</span>
+        </h1>
+        <p class="text-xl text-slate-600 mb-4">面向视觉设计课程的AI知识库与作业诊断平台</p>
+        <p class="text-slate-500 mb-10">汇聚专业课程知识与教学经验，AI赋能教学全流程，让备课更高效、学习更精准、创作更出色。</p>
+        <div class="flex gap-4 mb-12">
+          <a href="#courses" class="px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg font-semibold shadow-lg">进入课程知识库</a>
+          <a href="#about" class="px-8 py-4 border-2 border-slate-200 text-slate-700 rounded-lg font-semibold">查看平台方案</a>
+        </div>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100 text-center">
+            <div class="text-2xl font-black text-red-600 mb-1">4个</div>
+            <div class="text-xs text-slate-500">课程方向</div>
+          </div>
+          <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100 text-center">
+            <div class="text-2xl font-black text-red-600 mb-1">AI</div>
+            <div class="text-xs text-slate-500">智能诊断</div>
+          </div>
+          <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100 text-center">
+            <div class="text-2xl font-black text-red-600 mb-1">全程</div>
+            <div class="text-xs text-slate-500">教学全过程支持</div>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <img src="https://neeko-copilot.bytedance.net/api/text2image?prompt=professional%20asian%20female%20teacher%20character%20design%20wearing%20beige%20trench%20coat%20glasses%20holding%20bag%20modern%20flat%20illustration%20style%20full%20body" alt="小林老师" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl">
+        <div class="absolute -right-4 top-1/4 space-y-3">
+          <div class="bg-white rounded-xl p-4 shadow-lg w-48">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">📚</div>
+              <span class="font-semibold text-sm">课程知识库</span>
+            </div>
+            <p class="text-xs text-slate-500">结构化沉淀课程资料</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-lg w-48">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">💬</div>
+              <span class="font-semibold text-sm">AI问答助手</span>
+            </div>
+            <p class="text-xs text-slate-500">专业知识即时解答</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-lg w-48">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">📋</div>
+              <span class="font-semibold text-sm">作业诊断</span>
+            </div>
+            <p class="text-xs text-slate-500">AI辅助评估作业</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 教学痛点 -->
+    <div class="py-20">
+      <div class="text-center mb-12">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-red-600 mb-4">Why Us</p>
+        <h2 class="text-4xl font-black text-slate-900 mb-4">为什么需要课程助手？</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+          <div class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-5">📁</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">课程资料分散</h3>
+          <p class="text-sm text-slate-500">资料在不同平台与设备中，查找整理耗时费力</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+          <div class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-5">⏰</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">作业反馈滞后</h3>
+          <p class="text-sm text-slate-500">批改与反馈时间长，学生难以及时改进</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+          <div class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-5">⭐</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">优秀案例难沉淀</h3>
+          <p class="text-sm text-slate-500">优秀作品难以系统保存，无法持续复用</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 四大课程方向 -->
+    <div class="py-20">
+      <div class="flex justify-between items-end mb-12">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.3em] text-red-600 mb-4">Course System</p>
+          <h2 class="text-4xl font-black text-slate-900">四大课程方向</h2>
+        </div>
+        <a href="#courses" class="text-red-600 font-semibold hover:text-red-700">查看全部课程 →</a>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+          <div class="bg-blue-50 p-6">
+            <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">📱</div>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">UI界面设计</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-sm text-slate-600 mb-4">掌握界面设计方法与规范，打造优秀的用户体验</p>
+            <button class="w-full py-2 border-2 border-slate-200 text-slate-700 rounded-lg font-semibold text-sm hover:border-red-300 hover:text-red-600">了解更多</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+          <div class="bg-amber-50 p-6">
+            <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl flex items-center justify-center">🛍️</div>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">电商设计</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-sm text-slate-600 mb-4">提升电商视觉表现力，助力品牌与转化增长</p>
+            <button class="w-full py-2 border-2 border-slate-200 text-slate-700 rounded-lg font-semibold text-sm hover:border-red-300 hover:text-red-600">了解更多</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+          <div class="bg-pink-50 p-6">
+            <div class="w-14 h-14 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl flex items-center justify-center">📸</div>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">新媒体视觉设计</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-sm text-slate-600 mb-4">玩转新媒体视觉语言，打造高传播力内容</p>
+            <button class="w-full py-2 border-2 border-slate-200 text-slate-700 rounded-lg font-semibold text-sm hover:border-red-300 hover:text-red-600">了解更多</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+          <div class="bg-green-50 p-6">
+            <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center">🎬</div>
+            <h3 class="text-xl font-bold text-slate-900 mt-4">动态设计</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-sm text-slate-600 mb-4">学习动效与视频设计，让画面"动"起来</p>
+            <button class="w-full py-2 border-2 border-slate-200 text-slate-700 rounded-lg font-semibold text-sm hover:border-red-300 hover:text-red-600">了解更多</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI助手入口 -->
+    <div class="bg-gradient-to-br from-red-50 to-amber-50 rounded-3xl p-12 mb-20">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.3em] text-red-600 mb-4">AI Assistant</p>
+          <h2 class="text-4xl font-black text-slate-900 mb-4">AI助手入口</h2>
+          <p class="text-lg text-slate-600">三类真实入口，让学生和教师都能用起来</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">💡</div>
+              <div>
+                <h3 class="font-bold text-slate-900">问知识点</h3>
+                <p class="text-xs text-slate-500">快速解答课程知识点</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">📝</div>
+              <div>
+                <h3 class="font-bold text-slate-900">改作业</h3>
+                <p class="text-xs text-slate-500">AI辅助作业诊断</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center">📋</div>
+              <div>
+                <h3 class="font-bold text-slate-900">生成任务书</h3>
+                <p class="text-xs text-slate-500">一键生成课程任务书</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 学生作品展示 -->
+    <div class="py-20">
+      <div class="flex justify-between items-end mb-12">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.3em] text-red-600 mb-4">Student Works</p>
+          <h2 class="text-4xl font-black text-slate-900">学生作品展示</h2>
+        </div>
+        <a href="#" class="text-red-600 font-semibold hover:text-red-700">查看更多作品 →</a>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+          <div class="h-48 bg-gradient-to-br from-blue-400 to-cyan-400 flex items-center justify-center">📱</div>
+          <div class="p-5">
+            <span class="text-xs px-3 py-1 bg-red-50 text-red-600 rounded-full">UI设计</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-3">移动健康App界面设计</h3>
+            <p class="text-sm text-slate-500 mt-1">作者: 王同学</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+          <div class="h-48 bg-gradient-to-br from-amber-400 to-orange-400 flex items-center justify-center">🛍️</div>
+          <div class="p-5">
+            <span class="text-xs px-3 py-1 bg-red-50 text-red-600 rounded-full">电商设计</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-3">国风美妆电商详情页</h3>
+            <p class="text-sm text-slate-500 mt-1">作者: 李同学</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+          <div class="h-48 bg-gradient-to-br from-pink-400 to-rose-400 flex items-center justify-center">🌆</div>
+          <div class="p-5">
+            <span class="text-xs px-3 py-1 bg-red-50 text-red-600 rounded-full">新媒体</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-3">夏日城市生活节海报</h3>
+            <p class="text-sm text-slate-500 mt-1">作者: 张同学</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+          <div class="h-48 bg-gradient-to-br from-green-400 to-teal-400 flex items-center justify-center">🚴</div>
+          <div class="p-5">
+            <span class="text-xs px-3 py-1 bg-red-50 text-red-600 rounded-full">动态设计</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-3">品牌宣传动态设计</h3>
+            <p class="text-sm text-slate-500 mt-1">作者: 陈同学</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-3xl py-16 text-center mb-20">
+      <h2 class="text-4xl font-black text-white mb-4">准备开启智慧教学之旅？</h2>
+      <p class="text-lg text-white/80 mb-8">加入小林老师课程助手，体验AI赋能的全新教学方式</p>
+      <div class="flex justify-center gap-4">
+        <a href="#courses" class="px-8 py-4 bg-white text-red-600 rounded-lg font-bold shadow-lg">免费试用</a>
+        <a href="#about" class="px-8 py-4 border-2 border-white/50 text-white rounded-lg font-bold">了解更多</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="mx-auto max-w-7xl px-6 py-16">
+    <div class="mb-12">
+      <p class="text-xs font-bold uppercase tracking-[0.3em] text-red-600 mb-4">Course System</p>
+      <h1 class="text-4xl lg:text-5xl font-black text-slate-900 mb-4">课程体系</h1>
+      <p class="text-xl text-slate-600">四大方向，构建设计能力矩阵</p>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mb-10">
+      <button class="px-5 py-2.5 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg text-sm font-semibold">全部</button>
+      <button class="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm font-semibold">UI界面设计</button>
+      <button class="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm font-semibold">电商设计</button>
+      <button class="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm font-semibold">新媒体视觉设计</button>
+      <button class="px-5 py-2.5 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm font-semibold">动态设计</button>
+    </div>
+
+    <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 mb-12">
+      <div class="flex items-start gap-4 mb-8">
+        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">📚</div>
+        <div>
+          <h2 class="text-xl font-bold text-slate-900 mb-2">关于课程体系</h2>
+          <p class="text-slate-600">小林老师课程体系面向视觉设计学习者，从基础认知到项目实战，层层递进、学以致用。</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-4 gap-4">
+        <div class="text-center p-4 bg-slate-50 rounded-xl">
+          <div class="text-2xl font-black text-red-600 mb-1">4大</div>
+          <div class="text-sm text-slate-500">课程方向</div>
+        </div>
+        <div class="text-center p-4 bg-slate-50 rounded-xl">
+          <div class="text-2xl font-black text-red-600 mb-1">60+</div>
+          <div class="text-sm text-slate-500">系统课程</div>
+        </div>
+        <div class="text-center p-4 bg-slate-50 rounded-xl">
+          <div class="text-2xl font-black text-red-600 mb-1">100+</div>
+          <div class="text-sm text-slate-500">实战案例</div>
+        </div>
+        <div class="text-center p-4 bg-slate-50 rounded-xl">
+          <div class="text-2xl font-black text-red-600 mb-1">全程</div>
+          <div class="text-sm text-slate-500">项目实战</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2 space-y-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center">
+              <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">📱</div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">UI界面设计</h3>
+              <p class="text-sm text-slate-600">从用户体验出发，打造高品质界面</p>
+            </div>
+          </div>
+          <div class="space-y-3 mb-4">
+            <div class="flex items-center gap-2 text-sm">
+              <span class="text-red-500">🎯</span>
+              <span class="text-slate-700">课程目标: 掌握界面设计方法与规范</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm">
+              <span class="text-red-500">📦</span>
+              <span class="text-slate-700">核心内容:</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-xs">设计基础</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-xs">界面规范</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-xs">交互设计</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-center pt-4 border-t border-slate-100">
+            <div class="flex items-center gap-4 text-sm">
+              <span>⏱️ 16周</span>
+              <span>👥 28个学员</span>
+              <span>📚 6h/周</span>
+            </div>
+            <button class="px-4 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg font-semibold text-sm">查看课程</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center">
+              <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg flex items-center justify-center">🛍️</div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">电商设计</h3>
+              <p class="text-sm text-slate-600">提升电商视觉表现力，助力品牌与转化增长</p>
+            </div>
+          </div>
+          <div class="space-y-3 mb-4">
+            <div class="flex items-center gap-2 text-sm">
+              <span class="text-red-500">🎯</span>
+              <span class="text-slate-700">课程目标: 掌握电商页面设计技巧</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm">
+              <span class="text-red-500">📦</span>
+              <span class="text-slate-700">核心内容:</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-xs">详情页设计</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-xs">主图设计</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-xs">活动海报</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-center pt-4 border-t border-slate-100">
+            <div class="flex items-center gap-4 text-sm">
+              <span>⏱️ 14周</span>
+              <span>👥 24个学员</span>
+              <span>📚 5h/周</span>
+            </div>
+            <button class="px-4 py-2 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg font-semibold text-sm">查看课程</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <h3 class="text-lg font-bold text-slate-900 mb-4">学习路径</h3>
+          <div class="relative">
+            <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-slate-200"></div>
+            <div class="space-y-4">
+              <div class="relative pl-10">
+                <div class="absolute left-2 w-5 h-5 bg-red-600 rounded-full flex items-center justify-center text-white text-xs">1</div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="font-semibold text-slate-900">基础认知与软件操作</span>
+                    <span class="text-xs text-slate-500">1-2周</span>
+                  </div>
+                  <p class="text-sm text-slate-500">设计基础与软件操作，建立设计思维</p>
+                </div>
+              </div>
+              <div class="relative pl-10">
+                <div class="absolute left-2 w-5 h-5 bg-red-600 rounded-full flex items-center justify-center text-white text-xs">2</div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="font-semibold text-slate-900">技能模块训练</span>
+                    <span class="text-xs text-slate-500">3-6周</span>
+                  </div>
+                  <p class="text-sm text-slate-500">系统学习各模块技能，完成阶段性练习</p>
+                </div>
+              </div>
+              <div class="relative pl-10">
+                <div class="absolute left-2 w-5 h-5 bg-red-600 rounded-full flex items-center justify-center text-white text-xs">3</div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="font-semibold text-slate-900">项目实战</span>
+                    <span class="text-xs text-slate-500">7-12周</span>
+                  </div>
+                  <p class="text-sm text-slate-500">参与真实项目，提升实战能力</p>
+                </div>
+              </div>
+              <div class="relative pl-10">
+                <div class="absolute left-2 w-5 h-5 bg-red-600 rounded-full flex items-center justify-center text-white text-xs">4</div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="font-semibold text-slate-900">作品集打造</span>
+                    <span class="text-xs text-slate-500">13-16周</span>
+                  </div>
+                  <p class="text-sm text-slate-500">整理与优化作品集，提升求职竞争力</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <h3 class="text-lg font-bold text-slate-900 mb-4">学习支持</h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center">👨‍🏫</div>
+              <div>
+                <p class="font-semibold text-slate-900 text-sm">作业点评</p>
+                <p class="text-xs text-slate-500">专业老师一对一指导</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center">🤖</div>
+              <div>
+                <p class="font-semibold text-slate-900 text-sm">AI学习助手</p>
+                <p class="text-xs text-slate-500">智能答疑，随时解决问题</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center">👥</div>
+              <div>
+                <p class="font-semibold text-slate-900 text-sm">学习社群</p>
+                <p class="text-xs text-slate-500">与同学交流进步，共同成长</p>
+              </div>
+            </div>
+          </div>
+          <button class="w-full mt-4 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg font-semibold">开始学习之旅</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section id="resources" class="mx-auto max-w-7xl px-6 py-16">
+    <div class="mb-12">
+      <p class="text-xs font-bold uppercase tracking-[0.3em] text-red-600 mb-4">Teaching Resources</p>
+      <h1 class="text-4xl lg:text-5xl font-black text-slate-900 mb-4">教学资源库</h1>
+      <p class="text-xl text-slate-600">课程讲义、案例素材、任务书与AI提示词</p>
+    </div>
+
+    <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 mb-8">
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="flex-1 relative">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">🔍</span>
+          <input type="text" placeholder="搜索资源标题、关键词、标签、作者..." class="w-full pl-12 pr-4 py-3 bg-slate-50 rounded-xl border border-slate-200 focus:border-red-300 outline-none" />
+        </div>
+        <select class="px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 focus:border-red-300 outline-none">
+          <option>全部资源</option>
+          <option>课程讲义</option>
+          <option>案例素材</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2">
+        <div class="flex flex-wrap gap-2 mb-6">
+          <button class="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg text-sm">📚 全部资源</button>
+          <button class="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm">📝 课程讲义</button>
+          <button class="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm">🗂️ 案例素材</button>
+          <button class="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm">📋 项目任务书</button>
+          <button class="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm">🤖 AI提示词库</button>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-slate-100">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">📝</div>
+              <div class="flex-1">
+                <h3 class="font-semibold text-slate-900">UI界面设计基础讲义</h3>
+                <div class="flex items-center gap-4 text-xs text-slate-500 mt-1">
+                  <span>小林老师</span>
+                  <span>2024-05-20</span>
+                  <span>1.2k 浏览</span>
+                </div>
+              </div>
+              <button class="px-3 py-1.5 border border-slate-200 text-slate-700 rounded-lg text-sm">查看详情</button>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-slate-100">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">🗂️</div>
+              <div class="flex-1">
+                <h3 class="font-semibold text-slate-900">电商产品详情页案例素材包</h3>
+                <div class="flex items-center gap-4 text-xs text-slate-500 mt-1">
+                  <span>小林老师</span>
+                  <span>2024-05-18</span>
+                  <span>896 浏览</span>
+                </div>
+              </div>
+              <button class="px-3 py-1.5 border border-slate-200 text-slate-700 rounded-lg text-sm">查看详情</button>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-slate-100">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">📋</div>
+              <div class="flex-1">
+                <h3 class="font-semibold text-slate-900">移动医疗健康App设计任务书</h3>
+                <div class="flex items-center gap-4 text-xs text-slate-500 mt-1">
+                  <span>小林老师</span>
+                  <span>2024-05-15</span>
+                  <span>732 浏览</span>
+                </div>
+              </div>
+              <button class="px-3 py-1.5 border border-slate-200 text-slate-700 rounded-lg text-sm">查看详情</button>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-slate-100">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">🤖</div>
+              <div class="flex-1">
+                <h3 class="font-semibold text-slate-900">UI配色方案生成提示词</h3>
+                <div class="flex items-center gap-4 text-xs text-slate-500 mt-1">
+                  <span>小林老师</span>
+                  <span>2024-05-11</span>
+                  <span>1.5k 浏览</span>
+                </div>
+              </div>
+              <button class="px-3 py-1.5 border border-slate-200 text-slate-700 rounded-lg text-sm">查看详情</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <button class="px-6 py-3 border border-slate-200 text-slate-700 rounded-lg font-semibold hover:border-red-300 hover:text-red-600">查看更多资源</button>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <div class="flex items-center gap-2 mb-4">
+            <span>🤖</span>
+            <span class="font-bold text-slate-900">AI提示词精选</span>
+            <span class="text-xs px-2 py-0.5 bg-purple-100 text-purple-600 rounded-full">AI</span>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-purple-50 rounded-xl p-4">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">✨</div>
+                <div class="flex-1">
+                  <p class="font-semibold text-slate-900 text-sm">生成用户画像</p>
+                  <p class="text-xs text-slate-500">根据设计需求生成用户画像与使用场景</p>
+                </div>
+                <button class="text-xs text-purple-600 font-medium">复制使用</button>
+              </div>
+            </div>
+            <div class="bg-purple-50 rounded-xl p-4">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">✨</div>
+                <div class="flex-1">
+                  <p class="font-semibold text-slate-900 text-sm">生成海报文案</p>
+                  <p class="text-xs text-slate-500">为活动海报生成创意文案与版式建议</p>
+                </div>
+                <button class="text-xs text-purple-600 font-medium">复制使用</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-red-500 to-red-700 rounded-2xl p-6 text-white">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+              <span class="font-bold">林</span>
+            </div>
+            <div>
+              <p class="font-semibold">小林老师精选推荐</p>
+              <p class="text-xs text-white/70">精心挑选的优质资源</p>
+            </div>
+          </div>
+          <div class="space-y-3 mb-4">
+            <div class="flex justify-between text-sm">
+              <span>精选资源</span>
+              <span class="font-bold">128</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span>推荐好评</span>
+              <span class="font-bold">98%</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span>持续更新</span>
+              <span class="font-bold">每周上新</span>
+            </div>
+          </div>
+          <button class="w-full py-3 bg-white text-red-600 rounded-lg font-semibold">查看推荐资源</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="mx-auto max-w-7xl px-6 py-16">
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+      <img src="https://neeko-copilot.bytedance.net/api/text2image?prompt=professional%20asian%20female%20teacher%20portrait%20wearing%20beige%20trench%20coat%20glasses%20modern%20flat%20illustration%20style" alt="小林老师" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-red-600 mb-4">About Me</p>
+        <h1 class="text-4xl lg:text-5xl font-black text-slate-900 mb-4">关于小林老师</h1>
+        <p class="text-lg text-red-600 font-semibold mb-4">设计艺术教学者 · 课程创新实践者</p>
+        <p class="text-slate-600 mb-4">你好，我是小林老师。我是一名设计艺术教育者，长期致力于视觉传达与数字媒体方向的教学与实践。</p>
+        <p class="text-slate-600 mb-8">在教学中，我融合项目实战与AI工具，构建高效、系统、可落地的课程体系，帮助学生提升专业能力、完成优质作品。</p>
+        <div class="grid grid-cols-4 gap-4">
+          <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+            <div class="text-2xl font-black text-red-600">4大</div>
+            <div class="text-xs text-slate-500">课程方向</div>
+          </div>
+          <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+            <div class="text-2xl font-black text-red-600">AI</div>
+            <div class="text-xs text-slate-500">教学实践</div>
+          </div>
+          <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+            <div class="text-2xl font-black text-red-600">80+</div>
+            <div class="text-xs text-slate-500">课程资源</div>
+          </div>
+          <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+            <div class="text-2xl font-black text-red-600">200+</div>
+            <div class="text-xs text-slate-500">学生作品指导</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-16">
+      <div class="text-center mb-12">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-red-600 mb-4">Philosophy</p>
+        <h2 class="text-4xl font-black text-slate-900">教学理念</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <div class="w-14 h-14 bg-gradient-to-br from-red-100 to-amber-100 rounded-xl flex items-center justify-center mb-5">🎨</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">设计美学</h3>
+          <p class="text-sm text-slate-500">培养审美与表达力，让设计更有温度与思考</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <div class="w-14 h-14 bg-gradient-to-br from-red-100 to-amber-100 rounded-xl flex items-center justify-center mb-5">💼</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">项目实践</h3>
+          <p class="text-sm text-slate-500">以真实项目为驱动，在做中学，在做中成长</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <div class="w-14 h-14 bg-gradient-to-br from-red-100 to-amber-100 rounded-xl flex items-center justify-center mb-5">🎯</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">职业导向</h3>
+          <p class="text-sm text-slate-500">关注行业与岗位需求，助力能力与职业的连接</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <div class="w-14 h-14 bg-gradient-to-br from-red-100 to-amber-100 rounded-xl flex items-center justify-center mb-5">🤖</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">AI赋能</h3>
+          <p class="text-sm text-slate-500">善用AI工具释放创造力，让学习更高效</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-slate-50 rounded-3xl p-12 mb-16">
+      <div class="text-center mb-12">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-red-600 mb-4">Career Journey</p>
+        <h2 class="text-4xl font-black text-slate-900">成长与实践</h2>
+      </div>
+      <div class="relative">
+        <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 -translate-x-1/2"></div>
+        <div class="space-y-12">
+          <div class="relative">
+            <div class="absolute left-1/2 top-0 w-5 h-5 bg-red-600 rounded-full border-4 border-white -translate-x-1/2"></div>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="bg-white rounded-2xl p-6 shadow-sm">
+                <div class="text-3xl font-black text-red-600 mb-2">2016</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">教育启航</h3>
+                <p class="text-slate-600">硕士毕业于设计学院，开始视觉设计方向的教学工作。</p>
+              </div>
+              <div></div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute left-1/2 top-0 w-5 h-5 bg-red-600 rounded-full border-4 border-white -translate-x-1/2"></div>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div></div>
+              <div class="bg-white rounded-2xl p-6 shadow-sm">
+                <div class="text-3xl font-black text-red-600 mb-2">2018</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">课程探索</h3>
+                <p class="text-slate-600">构建系统化课程体系，聚焦项目教学与能力培养。</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute left-1/2 top-0 w-5 h-5 bg-red-600 rounded-full border-4 border-white -translate-x-1/2"></div>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="bg-white rounded-2xl p-6 shadow-sm">
+                <div class="text-3xl font-black text-red-600 mb-2">2021</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">AI融合实践</h3>
+                <p class="text-slate-600">引入AI工具到教学与创作中，提升效率与创新表达。</p>
+              </div>
+              <div></div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute left-1/2 top-0 w-5 h-5 bg-red-600 rounded-full border-4 border-white -translate-x-1/2"></div>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div></div>
+              <div class="bg-white rounded-2xl p-6 shadow-sm">
+                <div class="text-3xl font-black text-red-600 mb-2">2024</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">平台共建</h3>
+                <p class="text-slate-600">打造课程助手平台，持续输出优质资源与服务。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-16">
+      <div class="text-center mb-12">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-red-600 mb-4">Services</p>
+        <h2 class="text-4xl font-black text-slate-900">我可以提供</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-4">📚</div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">课程建设</h3>
+          <p class="text-sm text-slate-500 mb-4">定制课程体系设计，内容规划与教学方案。</p>
+          <button class="text-red-600 font-semibold text-sm">了解更多 →</button>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-4">📦</div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">资源整合</h3>
+          <p class="text-sm text-slate-500 mb-4">教学资源开发与整理，打造精品知识库。</p>
+          <button class="text-red-600 font-semibold text-sm">了解更多 →</button>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-4">📝</div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">作业诊断</h3>
+          <p class="text-sm text-slate-500 mb-4">AI辅助作业评估，多维度提升作品质量。</p>
+          <button class="text-red-600 font-semibold text-sm">了解更多 →</button>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-4">🎤</div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">公开课分享</h3>
+          <p class="text-sm text-slate-500 mb-4">主题讲座与公开课，设计理念与方法分享。</p>
+          <button class="text-red-600 font-semibold text-sm">了解更多 →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white py-16 mx-6 rounded-3xl mb-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center">
+            <span class="font-bold">林</span>
+          </div>
+          <div>
+            <p class="font-bold">小林老师</p>
+            <p class="text-xs text-slate-400">设计艺术教学空间</p>
+          </div>
+        </div>
+        <p class="text-sm text-slate-400">专注视觉设计教学与研究，打造优质课程，用教育成就未来。</p>
+      </div>
+      <div>
+        <h4 class="font-bold mb-5 text-sm uppercase tracking-wider text-slate-300">导航</h4>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li><a href="#home" class="hover:text-white">首页</a></li>
+          <li><a href="#courses" class="hover:text-white">课程</a></li>
+          <li><a href="#resources" class="hover:text-white">资源</a></li>
+          <li><a href="#about" class="hover:text-white">关于</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-5 text-sm uppercase tracking-wider text-slate-300">资源</h4>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li><a href="#resources" class="hover:text-white">课程资料</a></li>
+          <li><a href="#resources" class="hover:text-white">教学模板</a></li>
+          <li><a href="#resources" class="hover:text-white">优秀案例</a></li>
+          <li><a href="#resources" class="hover:text-white">设计工具</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-5 text-sm uppercase tracking-wider text-slate-300">联系我</h4>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li>邮箱: linxiaoshi@design.edu.cn</li>
+          <li>地址: 上海市徐汇区某高校设计学院</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-800 mt-10 pt-8 text-center">
+      <p class="text-sm text-slate-500">© 2024 小林老师课程助手. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // 导航高亮
+    window.addEventListener('scroll', function() {
+      const sections = ['home', 'courses', 'resources', 'about'];
+      let currentSection = '';
+      
+      sections.forEach(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            currentSection = section;
+          }
+        }
+      });
+
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === '#' + currentSection) {
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
